@@ -19,7 +19,6 @@ public class SumTest {
 				break;
 			}
 		}
-		
 		System.out.println("총 합계= " + sum + ", 반복횟수= "+ cnt);
 		// 반복 - 1-100 난수 생성하여 합계 누적(단, 10 의 배수이면 합계 제외, 반복횟수 제외) 
 		// 합계 3000 이하일 때까지
