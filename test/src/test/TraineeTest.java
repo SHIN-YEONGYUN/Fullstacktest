@@ -1,6 +1,18 @@
 package test;
 
 class Trainee{
+	String name;
+    String cname;
+	static String cen = "멀티캠프";
+	int p;
+	int b;
+	int h;
+	
+	int add(int p, int b, int h) {
+		if()
+		return i + j
+	}
+	
 	// 변수 - 이름, 과정명, 교육기관( 모든 교육생 "멀티캠프" 동일 공유 ), 교육비, 부과금, 환급금
 	// 생성자
 	// 메소드 - 환급금 계산 메소드 
