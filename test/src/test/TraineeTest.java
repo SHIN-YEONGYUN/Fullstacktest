@@ -1,16 +1,25 @@
 package test;
 
 class Trainee{
-	String name;
-    String cname;
-	static String cen = "멀티캠프";
-	int p;
-	int b;
-	int h;
+	String name , title;
+	static String camp = "멀티캠프";
+    double fee, addFee, returnFee;
 	
-	int add(int p, int b, int h) {
-		if()
-		return i + j
+	double calcReturnFee() {
+		if(title.equals("자바")) {
+			returnFee = fee * 0.2 + addFee;
+		}
+		else if(title.equals("jsp")) {
+			returnFee = fee * 0.15 + addFee;
+		}
+		else if(title.equals("spring")) {
+			returnFee = fee * 0.1 + addFee;
+		}
+		else {
+			System.out.println("일치하는 과정명은 없습니다.");
+			returnFee = 0;
+		}
+		return returnFee;
 	}
 	
 	// 변수 - 이름, 과정명, 교육기관( 모든 교육생 "멀티캠프" 동일 공유 ), 교육비, 부과금, 환급금
