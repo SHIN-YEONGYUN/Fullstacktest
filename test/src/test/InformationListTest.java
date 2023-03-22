@@ -1,9 +1,10 @@
 package test;
 
+
 public class InformationListTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ArrayList<Information> list = new ArrayList();
 
 	}
 
