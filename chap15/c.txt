@@ -1,0 +1,55 @@
+1 : package FileCopy;
+2 : 
+3 : // import java.io.FileNotFoundException;
+4 : import java.io.FileReader;
+5 : import java.io.FileWriter;
+6 : import java.io.IOException;
+7 : import java.util.Scanner;
+8 : 
+9 : /*명령행 매개변수
+10 :  * 1. a.txt b.txt --> 예외발생
+11 :  * 2. src/chap15/FileCopyTest.java b.txt -->  새로 생성
+12 :  * 3. src/chap15/FileCopyTest.java b.txt --> 이전 저장 내용 삭제
+13 :  * 4. (소스수정 - true) src/chap15/ScannerTest.java b.txt --> 이전 저장 내용 유지 후 추가
+14 :  * */
+15 : 
+16 : public class FileCopyTest {
+17 : 
+18 : 	public static void main(String[] args) {
+19 : 		FileReader fr = null;
+20 : 		FileWriter fw = null;
+21 : 		try {
+22 : 			fr = new FileReader(args[0]);
+23 : 			fw = new FileWriter(args[1]);
+24 : 			/*
+25 : 			 * int linenumber = 1; fw.write(linenumber + " : "); while (true) { int i =
+26 : 			 * fr.read(); // 1문자를 2바이트 단위 if (i == -1) break; else if (i == '\n') { String
+27 : 			 * result = ++linenumber + " : "; fw.write(result); } else { fw.write(i); } }
+28 : 			 * 
+29 : 			 * }
+30 : 			 */
+31 : 			int linenumber = 1;
+32 : 			Scanner sc = new Scanner(fr);
+33 : 			while (true) {
+34 : 				String result = sc.nextLine(); // \n 1줄로 인식하고 이전 입력 저장
+35 : 				if (sc.hasNextLine() == false)
+36 : 					break;
+37 : 				fw.write(linenumber++ + " : " +  result + "\n");
+38 : 
+39 : 			} // while end
+40 : 		} // try end
+41 : 
+42 : 		// catch(FileNotFoundException e) {}
+43 : 		catch (IOException e) {
+44 : 			e.printStackTrace();
+45 : 		} finally {
+46 : 			try {
+47 : 				fw.close();
+48 : 				fr.close();
+49 : 			} catch (IOException e) {
+50 : 			}
+51 : 
+52 : 		}
+53 : 
+54 : 	}
+55 : 
